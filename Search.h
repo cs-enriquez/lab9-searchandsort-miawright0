@@ -114,7 +114,7 @@ void swap(double darray[], int i, int j)
 
 int minFind(double darray[], int start, int n) 
 {
-    const int n = 5; //the size of the array 
+    //const int n = 5; //the size of the array 
     //n which is the size of the array isnt declared in the test
     int minIndex = start;
 
