@@ -22,7 +22,7 @@ for (int i = 0; i < n; i++)
 //    return false otherwise
 bool seqSearch(string target, string arr[], int start, int end) 
 {
-    for( int i = start; i < end; i++)
+    for( int i = start; i <= end; i++)
     {
         if(arr[i] == target)
         {
@@ -112,13 +112,13 @@ void swap(double darray[], int i, int j)
     darray[j]= temp;
 }
 
-int minFind(double darray[], int start, int n) 
+int minFind(double darray[], int n) 
 {
-    //const int n = 5; //the size of the array 
-    //n which is the size of the array isnt declared in the test
-    int minIndex = start;
+ 
 
-    for (int i = start + 1; i < n; ++i) 
+    int minIndex = 0;
+
+    for (int i = 1; i < n; i++) 
     {
         if (darray[i] < darray[minIndex]) 
         {
@@ -130,10 +130,17 @@ int minFind(double darray[], int start, int n)
 
 void newSort(double darray[], int n) 
 {
-    for(int i = 0; i < n -1; i++)
+    for(int i = 0; i < n - 1; i++)
     {
-        int minIndex = minFind(darray, i ,n);
-        swap(darray, i, minIndex);
-
+        int minIndex = i;
+    
+    for(int j = i + 1; j < n; j++)
+    {
+        if(darray[j]< darray[minIndex])
+        {
+            minIndex = j;
+        }
+    }
+        swap(darray[i], darray[minIndex]);
     }
 }
